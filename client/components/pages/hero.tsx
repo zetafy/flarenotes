@@ -14,7 +14,7 @@ export default function Hero() {
       <div className="flex flex-1 flex-col items-center gap-4 text-center lg:gap-8">
         <div className="space-y-4">
           <h1 className="text-4xl font-bold lg:text-6xl">
-            <ReactTyped strings={["Welcome to Flarenotes"]} typeSpeed={110} loop />
+            <ReactTyped strings={["Welcome to Flarenotes"]} typeSpeed={110} loop backDelay={4500} />
           </h1>
           <h2 className="text-lg font-light text-muted-foreground lg:text-3xl">
             {heroHeader.subheader}
