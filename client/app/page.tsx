@@ -1,9 +1,13 @@
-import Image from "next/image";
+import Hero from "@/components/pages/hero"
+import FeatureCards from "@/components/pages/feature-cards"
+import Features from "@/components/pages/features"
 
 export default function Home() {
   return (
-    <div>
-      <h1>Flarenotes Home</h1>
-    </div>
-  );
+    <main>
+      <Hero />
+      <FeatureCards />
+      <Features />
+    </main>
+  )
 }
