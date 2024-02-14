@@ -7,6 +7,8 @@ import { siteConfig } from "@/config/site"
 import { navLinks } from "@/lib/links"
 import { settings } from "@/config/settings"
 import Image from "next/image"
+import { GitHubLogoIcon } from "@radix-ui/react-icons"
+import { Button } from "../ui/button"
 
 export default function Navbar() {
   const [navbar, setNavbar] = useState(false)
@@ -28,9 +30,15 @@ export default function Navbar() {
       <nav className="mx-auto justify-between px-4 md:flex md:items-center md:px-8 lg:max-w-7xl">
         <div>
           <div className="flex items-center justify-between py-3 md:block md:py-5">
+<<<<<<< HEAD
+            <Link href="/" onClick={handleClick} className="flex items-center gap-2">
+              <Image src="/logo.png" width={25} height={25} alt="logo.png" className="items-start" />
+              <h1 className="text-2xl font-bold bg-clip-text text-black hover:text-transparent hover:bg-gradient-to-r from-red-900 to-orange-600 duration-300 ease-in-out lg:hover:scale-110 dark:text-white">
+=======
             <Link href="/" onClick={handleClick} className="flex items-center gap-2 hover:gap-4">
               <Image src="/logo.png" width={23} height={23} alt="logo.png" className="items-start" />
               <h1 className="text-2xl font-bold bg-clip-text text-black hover:text-transparent hover:bg-gradient-to-r from-red-900 to-orange-600 duration-300 ease-in-out lg:hover:scale-110">
+>>>>>>> b68bed8404cad629d88a88125a54c95797c6ae43
                 {siteConfig.name}
               </h1>
             </Link>
@@ -47,6 +55,7 @@ export default function Navbar() {
                     viewBox="0 0 20 20"
                     fill="currentColor"
                   >
+
                     <path
                       fillRule="evenodd"
                       d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
@@ -62,6 +71,7 @@ export default function Navbar() {
                     stroke="currentColor"
                     strokeWidth={2}
                   >
+
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -70,7 +80,12 @@ export default function Navbar() {
                   </svg>
                 )}
               </button>
-              <ModeToggle />
+              <div className="flex">
+                <Button variant="outline" size="icon">
+                  <GitHubLogoIcon />
+                </Button>
+                <ModeToggle />
+              </div>
             </div>
           </div>
         </div>
@@ -97,7 +112,12 @@ export default function Navbar() {
         </div>
         {settings.themeToggleEnabled && (
           <div className="hidden md:block">
-            <ModeToggle />
+            <div className="flex">
+              <Button variant="outline" size="icon">
+                <GitHubLogoIcon />
+              </Button>
+              <ModeToggle />
+            </div>
           </div>
         )}
       </nav>
