@@ -7,10 +7,11 @@ export const options = {
       profile(profile): any {
         console.log("Profile GitHub: ", profile);
 
-        let userRole = "GitHub User";
-        if (profile?.email === "abyan@abydyl.net") {
-          userRole = "admin";
-        }
+        let userRole = "User";
+        //// Check if email is in admin list
+        // if (profile?.email === "abyan@abydyl.net") {
+        //   userRole = "admin";
+        // }
         return {
           ...profile,
           role: userRole,
@@ -23,7 +24,7 @@ export const options = {
       profile(profile) {
         console.log("Profile Google: ", profile);
 
-        let userRole = "Google User";
+        let userRole = "User";
         return {
           ...profile,
           id: profile.sub,
@@ -34,11 +35,6 @@ export const options = {
       clientSecret: process.env.GOOGLE_SECRET!,
     }),
   ],
-  theme: {
-    colorScheme: "dark",
-    brandColor: "#A400F1",
-    logo: "https://i.ibb.co/8sHv5w5/canute-logo-textless.png",
-  },
   callbacks: {
     async jwt({ token, user }: { token: any; user: any }) {
       if (user) token.role = user.role;
