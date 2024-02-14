@@ -1,4 +1,5 @@
 import { HeroHeader, ContentSection } from "@/types/contents"
+import Typewriter from "@/components/pages/TypeWriter"
 
 /* ====================
 [> CUSTOMIZING CONTENT <]
@@ -8,8 +9,8 @@ import { HeroHeader, ContentSection } from "@/types/contents"
  ==================== */
 
 export const heroHeader: HeroHeader = {
-  header: `hello`,
-  subheader: `Easy to setup. Customizable. Quick. Responsive.`,
+  header: `FlareNotes`,
+  subheader: ``,
   image: `/hero-img.webp`,
 }
 

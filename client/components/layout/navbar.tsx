@@ -6,7 +6,12 @@ import { ModeToggle } from "@/components/mode-toggle"
 import { siteConfig } from "@/config/site"
 import { navLinks } from "@/lib/links"
 import { settings } from "@/config/settings"
+<<<<<<< HEAD
 import Image from "next/image"
+=======
+import { Button } from "@/components/ui/button"
+import { redirect } from "next/navigation"
+>>>>>>> 95bb2044ac8332a7b8679d3a8fea4efa6c555dfa
 
 export default function Navbar() {
   const [navbar, setNavbar] = useState(false)
@@ -14,6 +19,7 @@ export default function Navbar() {
   const handleClick = async () => {
     setNavbar(false)
   }
+  
 
   useEffect(() => {
     if (navbar) {
@@ -28,9 +34,14 @@ export default function Navbar() {
       <nav className="mx-auto justify-between px-4 md:flex md:items-center md:px-8 lg:max-w-7xl">
         <div>
           <div className="flex items-center justify-between py-3 md:block md:py-5">
+<<<<<<< HEAD
             <Link href="/" onClick={handleClick} className="flex items-center gap-2">
               <Image src="/logo.png" width={25} height={25} alt="logo.png" className="items-start" />
               <h1 className="text-2xl font-bold bg-clip-text text-black hover:text-transparent hover:bg-gradient-to-r from-red-900 to-orange-600 duration-300 ease-in-out lg:hover:scale-110">
+=======
+            <Link href="/" onClick={handleClick}>
+              <h1 className="text-2xl font-bold bg-clip-text text-yellow hover:text-transparent hover:bg-gradient-to-r from-red-900 to-orange-600 duration-300 ease-in-out lg:hover:scale-110">
+>>>>>>> 95bb2044ac8332a7b8679d3a8fea4efa6c555dfa
                 {siteConfig.name}
               </h1>
             </Link>
