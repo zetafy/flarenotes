@@ -1,5 +1,5 @@
 import { HeroHeader, ContentSection } from "@/types/contents"
-import Typewriter from "@/components/pages/TypeWriter"
+
 
 /* ====================
 [> CUSTOMIZING CONTENT <]
