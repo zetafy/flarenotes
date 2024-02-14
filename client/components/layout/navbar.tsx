@@ -6,6 +6,8 @@ import { ModeToggle } from "@/components/mode-toggle"
 import { siteConfig } from "@/config/site"
 import { navLinks } from "@/lib/links"
 import { settings } from "@/config/settings"
+import { Button } from "@/components/ui/button"
+import { redirect } from "next/navigation"
 
 export default function Navbar() {
   const [navbar, setNavbar] = useState(false)
@@ -13,6 +15,7 @@ export default function Navbar() {
   const handleClick = async () => {
     setNavbar(false)
   }
+  
 
   useEffect(() => {
     if (navbar) {
