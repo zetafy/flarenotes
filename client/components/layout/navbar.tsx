@@ -30,15 +30,9 @@ export default function Navbar() {
       <nav className="mx-auto justify-between px-4 md:flex md:items-center md:px-8 lg:max-w-7xl">
         <div>
           <div className="flex items-center justify-between py-3 md:block md:py-5">
-<<<<<<< HEAD
-            <Link href="/" onClick={handleClick} className="flex items-center gap-2">
-              <Image src="/logo.png" width={25} height={25} alt="logo.png" className="items-start" />
-              <h1 className="text-2xl font-bold bg-clip-text text-black hover:text-transparent hover:bg-gradient-to-r from-red-900 to-orange-600 duration-300 ease-in-out lg:hover:scale-110 dark:text-white">
-=======
-            <Link href="/" onClick={handleClick} className="flex items-center gap-2 hover:gap-4">
+            <Link href="/" onClick={handleClick} className="flex items-center gap-2 hover:scale-110 duration-300 ease-in-out">
               <Image src="/logo.png" width={23} height={23} alt="logo.png" className="items-start" />
-              <h1 className="text-2xl font-bold bg-clip-text text-black hover:text-transparent hover:bg-gradient-to-r from-red-900 to-orange-600 duration-300 ease-in-out lg:hover:scale-110">
->>>>>>> b68bed8404cad629d88a88125a54c95797c6ae43
+              <h1 className="text-2xl font-bold bg-clip-text text-black hover:text-transparent hover:bg-gradient-to-r from-red-900 to-orange-600 duration-300 ease-in-out lg:hover:scale-105 dark:text-white">
                 {siteConfig.name}
               </h1>
             </Link>
