@@ -28,7 +28,7 @@ export default function Navbar() {
         <div>
           <div className="flex items-center justify-between py-3 md:block md:py-5">
             <Link href="/" onClick={handleClick}>
-              <h1 className="text-2xl font-bold bg-clip-text text-black hover:text-transparent hover:bg-gradient-to-r from-red-900 to-orange-600 duration-300 ease-in-out lg:hover:scale-110">
+              <h1 className="text-2xl font-bold bg-clip-text text-yellow hover:text-transparent hover:bg-gradient-to-r from-red-900 to-orange-600 duration-300 ease-in-out lg:hover:scale-110">
                 {siteConfig.name}
               </h1>
             </Link>
@@ -74,9 +74,8 @@ export default function Navbar() {
         </div>
         <div>
           <div
-            className={`absolute left-0 right-0 z-10 m-auto justify-self-center rounded-md border bg-background p-4 md:static md:mt-0 md:block md:border-none md:p-0 ${
-              navbar ? "block" : "hidden"
-            }`}
+            className={`absolute left-0 right-0 z-10 m-auto justify-self-center rounded-md border bg-background p-4 md:static md:mt-0 md:block md:border-none md:p-0 ${navbar ? "block" : "hidden"
+              }`}
             style={{ width: "100%", maxWidth: "20rem" }}
           >
             <ul className="flex flex-col items-center space-y-4 text-primary opacity-60 md:flex-row md:space-x-6 md:space-y-0">
