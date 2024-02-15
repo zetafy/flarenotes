@@ -1,15 +1,18 @@
 package main
 
 import (
-  "github.com/gin-gonic/gin"
+	"github.com/gin-gonic/gin"
+	"server/initializers"
 )
 
 func main() {
-	r := gin.Default() // Using gin
-	r.GET("/", func(c *gin.Context) {
-		c.JSON(200, gin.H{
+	initializers.LoadEnv()
+
+	router := gin.Default() // Using gin
+	router.GET("/", func(context *gin.Context) {
+		context.JSON(200, gin.H{
 			"message": "hello world",
 		})
 	})
-	r.Run() // listen and serve on 0.0.0.0:8080
+	router.Run() // listen and serve on 0.0.0.0:8080
 }
