@@ -17,44 +17,31 @@ export const heroHeader: HeroHeader = {
 export const featureCards: ContentSection = {
   header: `Powered by`,
   subheader: `What makes Next Landing possible`,
-  content: [
-    {
-      text: `Next.js`,
-      subtext: `The React Framework`,
-      icon: "nextjs",
-    },
-    {
-      text: `shadcn/ui`,
-      subtext: `Beautifully designed components`,
-      icon: "shadcnUi",
-    },
-    {
-      text: `Vercel`,
-      subtext: `Develop. Preview. Ship.`,
-      icon: "vercel",
-    },
-  ],
+  content: []
 }
 
 export const features: ContentSection = {
   header: `Features`,
-  subheader: `Why use Next Landing?`,
+  subheader: `Features Available`,
   image: `/features-img.webp`,
   content: [
     {
-      text: `SEO Optimized`,
-      subtext: `Improved website visibility on search engines`,
+      text: `Community`,
+      subtext: `Collective Chats & Solo Conversations`,
       icon: "fileSearch",
+      id: 1,
     },
     {
-      text: `Highly Performant`,
-      subtext: `Fast loading times and smooth performance`,
+      text: `Notes`,
+      subtext: `Publish Your Notes & Get endorsed`,
       icon: "barChart",
+      id: 2,
     },
     {
-      text: `Easy Customizability`,
-      subtext: `Change your content and layout with little effort`,
+      text: `Text Editor`,
+      subtext: `Craft Your Digital Notebook!`,
       icon: "settings",
+      id: 3
     },
   ],
 }
