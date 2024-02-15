@@ -100,6 +100,10 @@ const icons = {
   statsBar: ImStatsBars,
   mixer: RxMixerHorizontal,
   check: BsCheck2,
+
+
+  //Github
+
 }
 
 export const Icons: IconsType = icons

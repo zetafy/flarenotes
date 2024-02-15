@@ -4,7 +4,8 @@ import { featureCards } from "@/config/contents"
 import { Card, CardDescription, CardTitle } from "@/components/ui/card"
 import { Icons } from "@/components/icons"
 
-export default function FeatureCards() {
+export default function
+  FeatureCards() {
   return (
     <section className="bg-slate-50 dark:bg-slate-900">
       <div className="container space-y-8 py-12 text-center lg:py-20">
