@@ -2,6 +2,6 @@
 
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/abyanmajid/revise-badvcomp/blob/main/LICENSE) ![CI](https://github.com/zetafy/flarenotes/actions/workflows/ci.yml/badge.svg) ![Next JS](https://img.shields.io/badge/Next-black?style=flat&logo=next.js&logoColor=white) ![Gin](https://img.shields.io/badge/Gin-blue.svg?style=flat&logo=gin&logoColor=white)
 
-Note-taking/sharing app built with Next.js and Gin-GORM
+Note-taking/sharing app built with Next.js, Gin, and Supabase.
 
 IN DEVELOPMENT
