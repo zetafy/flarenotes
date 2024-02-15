@@ -10,6 +10,7 @@ export type Content = {
   text: string
   subtext: string
   icon?: IconKeys
+  id: number
 }
 
 export type ContentSection = {
