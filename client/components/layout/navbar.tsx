@@ -9,7 +9,15 @@ import { settings } from "@/config/settings"
 import Image from "next/image"
 import { GitHubLogoIcon } from "@radix-ui/react-icons"
 import { Button } from "../ui/button"
-
+import { CgProfile } from "react-icons/cg";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 export default function Navbar() {
   const [navbar, setNavbar] = useState(false)
 
@@ -74,7 +82,27 @@ export default function Navbar() {
                   </svg>
                 )}
               </button>
+
               <div className="flex">
+
+                <DropdownMenu>
+
+                  <DropdownMenuTrigger asChild>
+                    <Button variant="outline" size="icon">
+                      <CgProfile /></Button>
+                  </DropdownMenuTrigger>
+
+                  <DropdownMenuContent>
+                    <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem>Profile</DropdownMenuItem>
+                    <DropdownMenuItem>Billing</DropdownMenuItem>
+                    <DropdownMenuItem>Team</DropdownMenuItem>
+                    <DropdownMenuItem>Subscription</DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+
+
                 <Button variant="outline" size="icon">
                   <GitHubLogoIcon />
                 </Button>
@@ -107,6 +135,22 @@ export default function Navbar() {
         {settings.themeToggleEnabled && (
           <div className="hidden md:block">
             <div className="flex">
+              <DropdownMenu>
+
+                <DropdownMenuTrigger asChild>
+                  <Button variant="outline" size="icon">
+                    <CgProfile /></Button>
+                </DropdownMenuTrigger>
+
+                <DropdownMenuContent>
+                  <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem>Profile</DropdownMenuItem>
+                  <DropdownMenuItem>Billing</DropdownMenuItem>
+                  <DropdownMenuItem>Team</DropdownMenuItem>
+                  <DropdownMenuItem>Subscription</DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
               <Button variant="outline" size="icon">
                 <GitHubLogoIcon />
               </Button>

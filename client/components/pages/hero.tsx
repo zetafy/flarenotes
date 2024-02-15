@@ -24,7 +24,7 @@ export default function Hero() {
           <Link
             href="https://github.com/redpangilinan/next-shadcn-landing"
             target="_blank"
-            className={`w-[10rem] ${cn(buttonVariants({ size: "lg" }))}`}
+            className={`w-[10rem] ${cn(buttonVariants({ size: "lg" }))} hover: white`}
             style={{ display: "flex" }}
           >
             Explore
@@ -33,6 +33,7 @@ export default function Hero() {
             href="http://localhost:3000/login"
             target="_blank"
             className={`w-[10rem] ${cn(buttonVariants({ size: "lg" }))}`}
+
           >
             Create
           </Link>
