@@ -41,18 +41,7 @@ export default function Hero() {
 
       </div>
 
-      {heroHeader.image !== "" ? (
-        <div className="flex flex-1 justify-center lg:justify-end">
-          <Image
-            src={heroHeader.image}
-            width={500}
-            height={500}
-            alt="Header image"
-          />
-        </div>
-      ) : (
-        <></>
-      )}
+
     </section>
   )
 }

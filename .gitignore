@@ -1,3 +1,4 @@
+# ------------------- FRONTEND IGNORES -------------------
 # dependencies
 client/node_modules
 client/.pnp
@@ -30,3 +31,23 @@ client/.vercel
 
 # typescript
 client/*.tsbuildinfo
+
+# ------------------- BACKEND IGNORES -------------------
+# Binaries for programs and plugins
+server/*.exe
+server/*.exe~
+server/*.dll
+server/*.so
+server/*.dylib
+
+# Test binary, built with `go test -c`
+server/*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+server/*.out
+
+# Go workspace file
+server/go.work
+
+# env files
+server/.env
