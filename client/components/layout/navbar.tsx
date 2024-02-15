@@ -9,7 +9,15 @@ import { settings } from "@/config/settings"
 import Image from "next/image"
 import { GitHubLogoIcon } from "@radix-ui/react-icons"
 import { Button } from "../ui/button"
-
+import { CgProfile } from "react-icons/cg";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 export default function Navbar() {
   const [navbar, setNavbar] = useState(false)
 
@@ -74,7 +82,27 @@ export default function Navbar() {
                   </svg>
                 )}
               </button>
+
               <div className="flex">
+
+                <DropdownMenu>
+
+                  <DropdownMenuTrigger asChild>
+                    <Button variant="outline" size="icon">
+                      <CgProfile /></Button>
+                  </DropdownMenuTrigger>
+
+                  <DropdownMenuContent>
+                    <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem>Profile</DropdownMenuItem>
+                    <DropdownMenuItem>Billing</DropdownMenuItem>
+                    <DropdownMenuItem>Team</DropdownMenuItem>
+                    <DropdownMenuItem>Subscription</DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+
+
                 <Button variant="outline" size="icon">
                   <GitHubLogoIcon />
                 </Button>
@@ -87,7 +115,7 @@ export default function Navbar() {
           <div
             className={`absolute left-0 right-0 z-10 m-auto justify-self-center rounded-md border bg-background p-4 md:static md:mt-0 md:block md:border-none md:p-0 ${navbar ? "block" : "hidden"
               }`}
-            style={{ width: "100%", maxWidth: "20rem" }}
+            style={{ width: "100%", maxWidth: "25rem" }}
           >
             <ul className="flex flex-col items-center space-y-4 text-primary opacity-60 md:flex-row md:space-x-6 md:space-y-0">
               {navLinks.map((link) => (
@@ -107,6 +135,22 @@ export default function Navbar() {
         {settings.themeToggleEnabled && (
           <div className="hidden md:block">
             <div className="flex">
+              <DropdownMenu>
+
+                <DropdownMenuTrigger asChild>
+                  <Button variant="outline" size="icon">
+                    <CgProfile /></Button>
+                </DropdownMenuTrigger>
+
+                <DropdownMenuContent>
+                  <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem>Profile</DropdownMenuItem>
+                  <DropdownMenuItem>Billing</DropdownMenuItem>
+                  <DropdownMenuItem>Team</DropdownMenuItem>
+                  <DropdownMenuItem>Subscription</DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
               <Button variant="outline" size="icon">
                 <GitHubLogoIcon />
               </Button>

@@ -10,5 +10,9 @@ export const navLinks = [
   {
     route: "Contact",
     path: "/contact",
+  },
+  {
+    route: "Community",
+    path: "/community",
   }
 ]

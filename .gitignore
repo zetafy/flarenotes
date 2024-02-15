@@ -34,6 +34,7 @@ client/*.tsbuildinfo
 
 # ------------------- BACKEND IGNORES -------------------
 # Binaries for programs and plugins
+server/server.exe
 server/*.exe
 server/*.exe~
 server/*.dll
