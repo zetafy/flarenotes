@@ -30,15 +30,9 @@ export default function Navbar() {
       <nav className="mx-auto justify-between px-4 md:flex md:items-center md:px-8 lg:max-w-7xl">
         <div>
           <div className="flex items-center justify-between py-3 md:block md:py-5">
-<<<<<<< HEAD
-            <Link href="/" onClick={handleClick} className="flex items-center gap-2">
-              <Image src="/logo.png" width={25} height={25} alt="logo.png" className="items-start hover:scale-105" />
-              <h1 className="text-2xl font-bold bg-clip-text text-black hover:text-transparent hover:bg-gradient-to-r from-red-900 to-orange-600 duration-300 ease-in-out lg:hover:scale-110 dark:text-white">
-=======
             <Link href="/" onClick={handleClick} className="flex items-center gap-2 hover:scale-110 duration-300 ease-in-out">
               <Image src="/logo.png" width={23} height={23} alt="logo.png" className="items-start" />
               <h1 className="text-2xl font-bold bg-clip-text text-black hover:text-transparent hover:bg-gradient-to-r from-red-900 to-orange-600 duration-300 ease-in-out lg:hover:scale-105 dark:text-white">
->>>>>>> 325396e49238f0e49d06c622149998b121401b99
                 {siteConfig.name}
               </h1>
             </Link>
@@ -93,7 +87,7 @@ export default function Navbar() {
           <div
             className={`absolute left-0 right-0 z-10 m-auto justify-self-center rounded-md border bg-background p-4 md:static md:mt-0 md:block md:border-none md:p-0 ${navbar ? "block" : "hidden"
               }`}
-            style={{ width: "100%", maxWidth: "20rem" }}
+            style={{ width: "100%", maxWidth: "25rem" }}
           >
             <ul className="flex flex-col items-center space-y-4 text-primary opacity-60 md:flex-row md:space-x-6 md:space-y-0">
               {navLinks.map((link) => (
