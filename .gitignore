@@ -34,17 +34,20 @@ client/*.tsbuildinfo
 
 # ------------------- BACKEND IGNORES -------------------
 # Binaries for programs and plugins
-*.exe
-*.exe~
-*.dll
-*.so
-*.dylib
+server/*.exe
+server/*.exe~
+server/*.dll
+server/*.so
+server/*.dylib
 
 # Test binary, built with `go test -c`
-*.test
+server/*.test
 
 # Output of the go coverage tool, specifically when used with LiteIDE
-*.out
+server/*.out
 
 # Go workspace file
-go.work
+server/go.work
+
+# env files
+server/.env
