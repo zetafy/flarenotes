@@ -1,8 +1,9 @@
-FROM debian-buster:slim
+FROM golang:1.21.6
 
-# Build stage here
-# ...
+WORKDIR /app
+COPY ../server/ .
+RUN go mod download
+RUN go build -o myapp .
 
-# Production stage here
-# ...
+CMD ["./server"]
 
