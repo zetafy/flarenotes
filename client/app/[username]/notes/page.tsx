@@ -21,7 +21,7 @@ export default function Notes({ params }: Params) {
             icon: 0
         },
         {
-            id: 1,
+            id: 2,
             title: "INFO1113 Notes (feat. Abyan)",
             updated: "1 hour ago",
             color: 2,
