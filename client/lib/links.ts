@@ -7,10 +7,7 @@ export const navLinks = [
     route: "Browse Notes",
     path: "/notes",
   },
-  {
-    route: "Contact",
-    path: "/contact",
-  },
+
   {
     route: "Community",
     path: "/community",

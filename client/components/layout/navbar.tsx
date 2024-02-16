@@ -10,6 +10,7 @@ import Image from "next/image"
 import { GitHubLogoIcon } from "@radix-ui/react-icons"
 import { Button } from "../ui/button"
 import { CgProfile } from "react-icons/cg";
+
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -24,6 +25,8 @@ export default function Navbar() {
   const handleClick = async () => {
     setNavbar(false)
   }
+
+
 
   useEffect(() => {
     if (navbar) {
@@ -95,9 +98,12 @@ export default function Navbar() {
                   <DropdownMenuContent>
                     <DropdownMenuLabel>My Account</DropdownMenuLabel>
                     <DropdownMenuSeparator />
-                    <DropdownMenuItem>Profile</DropdownMenuItem>
+                    <DropdownMenuItem>
+                      <Link href="/profile" passHref>
+                        <a style={{ textDecoration: 'none', color: 'inherit' }}>Profile</a>
+                      </Link>
+                    </DropdownMenuItem>
                     <DropdownMenuItem>Billing</DropdownMenuItem>
-                    <DropdownMenuItem>Team</DropdownMenuItem>
                     <DropdownMenuItem>Subscription</DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
@@ -145,9 +151,12 @@ export default function Navbar() {
                 <DropdownMenuContent>
                   <DropdownMenuLabel>My Account</DropdownMenuLabel>
                   <DropdownMenuSeparator />
-                  <DropdownMenuItem>Profile</DropdownMenuItem>
+                  <DropdownMenuItem>
+                    <Link href="/profile" legacyBehavior>
+                      Profile
+                    </Link>
+                  </DropdownMenuItem>
                   <DropdownMenuItem>Billing</DropdownMenuItem>
-                  <DropdownMenuItem>Team</DropdownMenuItem>
                   <DropdownMenuItem>Subscription</DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>

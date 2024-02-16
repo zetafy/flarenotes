@@ -15,8 +15,20 @@ func SetRoutes(router *gin.Engine) {
 	router.PATCH("/users/:id", handlers.UpdateUser)
 	router.DELETE("/users/:id", handlers.DeleteUser)
 
-	// Notes
+	// Notebooks
+	router.GET("/notebooks", handlers.FetchAllNotebooks)
+	router.GET("/notebooks/:id", handlers.FetchNotebookById)
+	router.POST("/notebooks", handlers.CreateNotebook)
+	router.PATCH("/notebooks/:id", handlers.UpdateNotebook)
+	router.DELETE("/notebooks/:id", handlers.DeleteNotebook)
 
-	// Notebook
+	// Notes
+	router.GET("/notes", handlers.FetchAllNotes)
+	router.GET("/notes/:id", handlers.FetchNoteById)
+	router.POST("/notes", handlers.CreateNote)
+	router.PATCH("/notes/:id", handlers.UpdateNote)
+	router.DELETE("/notes/:id", handlers.DeleteNote)
+
+	// Chats
 
 }

@@ -20,10 +20,9 @@ func FetchAllNotebooks(context *gin.Context) {
 		"status":    200,
 		"notebooks": results,
 	})
-
 }
 
-func FetchNotebook(context *gin.Context) {
+func FetchNotebookById(context *gin.Context) {
 	id := context.Param("id")
 
 	supabase := initializers.Supabase()
@@ -73,7 +72,7 @@ func CreateNotebook(context *gin.Context) {
 	var results []models.Notebook
 	err := supabase.DB.From("notebooks").Insert(&notebook).Execute(&results)
 	if err != nil {
-		context.JSON(400, gin.H{"error": err.Error})
+		context.JSON(400, gin.H{"error": err.Error()})
 		return
 	}
 
