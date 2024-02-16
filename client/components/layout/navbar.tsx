@@ -26,8 +26,6 @@ export default function Navbar() {
     setNavbar(false)
   }
 
-
-
   useEffect(() => {
     if (navbar) {
       document.body.style.overflow = "hidden"
@@ -89,12 +87,10 @@ export default function Navbar() {
               <div className="flex">
 
                 <DropdownMenu>
-
                   <DropdownMenuTrigger asChild>
                     <Button variant="outline" size="icon">
                       <CgProfile /></Button>
                   </DropdownMenuTrigger>
-
                   <DropdownMenuContent>
                     <DropdownMenuLabel>My Account</DropdownMenuLabel>
                     <DropdownMenuSeparator />
