@@ -1,4 +1,4 @@
-PROJECT_NAME = flarenotes
+PROJECT_NAME = server
 
 setup:
 	@echo "[*] Initializing Go module..."

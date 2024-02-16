@@ -1,6 +1,8 @@
 package models
 
 type Notebook struct {
-	title string
-	notes []string
+	Owner       string
+	Title       string
+	Description string
+	Notes       []string
 }
