@@ -49,11 +49,14 @@ func FetchChatById(context *gin.Context) {
 func CreateChat(context *gin.Context) {
 
 	supabase := initializers.Supabase()
+
 	var body struct {
-		Authors  []string `json:"authors"`
-		Title    string   `json:"title"`
-		Content  string   `json:"content"`
-		Notebook string   `json:"notebook"`
+		Users             []string `json:"users"`
+		Messages          []string `json:"messages"`
+		Dm_blocker        string   `json:"dm_blocker"`
+		Is_group_chat     bool     `json:"is_group_chat"`
+		Group_name        string   `json:"group_name"`
+		Group_description string   `json:"group_description"`
 	}
 
 	if err := context.Bind(&body); err != nil {
@@ -61,15 +64,17 @@ func CreateChat(context *gin.Context) {
 		return
 	}
 
-	note := models.Note{
-		Authors:  body.Authors,
-		Title:    body.Title,
-		Content:  body.Content,
-		Notebook: body.Notebook,
+	chat := models.Chat{
+		Users:             body.Users,
+		Messages:          body.Messages,
+		Dm_blocker:        body.Dm_blocker,
+		Is_group_chat:     body.Is_group_chat,
+		Group_name:        body.Group_name,
+		Group_description: body.Group_description,
 	}
 
 	var results []models.Notebook
-	err := supabase.DB.From("notebooks").Insert(&note).Execute(&results)
+	err := supabase.DB.From("chats").Insert(&chat).Execute(&results)
 	if err != nil {
 		context.JSON(400, gin.H{"error": err.Error()})
 		return
@@ -77,7 +82,7 @@ func CreateChat(context *gin.Context) {
 
 	context.JSON(201, gin.H{
 		"status": 201,
-		"note":   note,
+		"chat":   chat,
 	})
 }
 
@@ -87,10 +92,12 @@ func UpdateChat(context *gin.Context) {
 	supabase := initializers.Supabase()
 
 	var body struct {
-		Authors  []string `json:"owner"`
-		Title    string   `json:"title"`
-		Content  string   `json:"content"`
-		Notebook string   `json:"notebook"`
+		Users             []string `json:"users"`
+		Messages          []string `json:"messages"`
+		Dm_blocker        string   `json:"dm_blocker"`
+		Is_group_chat     bool     `json:"is_group_chat"`
+		Group_name        string   `json:"group_name"`
+		Group_description string   `json:"group_description"`
 	}
 
 	if err := context.Bind(&body); err != nil {
@@ -98,23 +105,25 @@ func UpdateChat(context *gin.Context) {
 		return
 	}
 
-	note := models.Note{
-		Authors:  body.Authors,
-		Title:    body.Title,
-		Content:  body.Content,
-		Notebook: body.Notebook,
+	chat := models.Chat{
+		Users:             body.Users,
+		Messages:          body.Messages,
+		Dm_blocker:        body.Dm_blocker,
+		Is_group_chat:     body.Is_group_chat,
+		Group_name:        body.Group_name,
+		Group_description: body.Group_description,
 	}
 
-	var results []models.Notebook
-	err := supabase.DB.From("notes").Update(&note).Eq("id", id).Execute(&results)
+	var results []models.Chat
+	err := supabase.DB.From("chats").Update(&chat).Eq("id", id).Execute(&results)
 	if err != nil {
 		context.JSON(400, gin.H{"error": err.Error})
 		return
 	}
 
-	context.JSON(201, gin.H{
-		"status": 201,
-		"note":   note,
+	context.JSON(200, gin.H{
+		"status": 200,
+		"chat":   chat,
 	})
 }
 
@@ -123,12 +132,12 @@ func DeleteChat(context *gin.Context) {
 
 	supabase := initializers.Supabase()
 
-	var results []models.User
-	err := supabase.DB.From("notes").Delete().Eq("id", id).Execute(&results)
+	var results []models.Chat
+	err := supabase.DB.From("chats").Delete().Eq("id", id).Execute(&results)
 	if err != nil {
 		context.JSON(400, gin.H{"error": err.Error()})
 		return
 	}
 
-	context.JSON(200, gin.H{"message": "Note deleted successfully"})
+	context.JSON(200, gin.H{"message": "Chat deleted successfully"})
 }
