@@ -14,7 +14,7 @@ export default function NotesEditor({ params }: Params) {
     const { notesId } = params;
     const [editorContent, setEditorContent] = useState("Default notes")
 
-    const handleContentChange = (newValue) => {
+    const handleContentChange = (newValue: string) => {
         setEditorContent(newValue)
     }
     return (
@@ -28,10 +28,10 @@ export default function NotesEditor({ params }: Params) {
                     theme="vs-light"
                     value="Your default notes goes here"
                     options={{
-                        autoClosingBrackets: true,
                         formatOnType: true
                     }}
                     remarkPlugins={[remarkGfm]}
+                    //@ts-ignore
                     onChange={handleContentChange}
                 />
             </div>      
