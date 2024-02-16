@@ -54,11 +54,12 @@ func CreateUser(context *gin.Context) {
 		Email       string   `json:"email"`
 		Password    string   `json:"password"`
 		Description string   `json:"description"`
-		Badges      []string `json:"badges" db:"badges"`
+		Chats       []string `json:"chats"`
+		Badges      []string `json:"badges"`
 		Roles       []string `json:"roles"`
-		Notebooks   []string `json:"notebooks"` // Assuming you handle conversion to []uuid.UUID elsewhere if necessary
-		Followers   []string `json:"followers" db:"followers"`
-		Following   []string `json:"following" db:"following"`
+		Notebooks   []string `json:"notebooks"`
+		Followers   []string `json:"followers"`
+		Following   []string `json:"following"`
 	}
 
 	if err := context.Bind(&body); err != nil {
@@ -71,6 +72,7 @@ func CreateUser(context *gin.Context) {
 		Email:       body.Email,
 		Password:    body.Password,
 		Description: body.Description,
+		Chats:       body.Chats,
 		Badges:      body.Badges,
 		Roles:       body.Roles,
 		Notebooks:   body.Notebooks,
@@ -101,11 +103,12 @@ func UpdateUser(context *gin.Context) {
 		Email       string   `json:"email"`
 		Password    string   `json:"password"`
 		Description string   `json:"description"`
-		Badges      []string `json:"badges" db:"badges"`
+		Chats       []string `json:"chats"`
+		Badges      []string `json:"badges"`
 		Roles       []string `json:"roles"`
-		Notebooks   []string `json:"notebooks"` // Assuming you handle conversion to []uuid.UUID elsewhere if necessary
-		Followers   []string `json:"followers" db:"followers"`
-		Following   []string `json:"following" db:"following"`
+		Notebooks   []string `json:"notebooks"`
+		Followers   []string `json:"followers"`
+		Following   []string `json:"following"`
 	}
 
 	if err := context.Bind(&body); err != nil {
@@ -118,6 +121,7 @@ func UpdateUser(context *gin.Context) {
 		Email:       body.Email,
 		Password:    body.Password,
 		Description: body.Description,
+		Chats:       body.Chats,
 		Badges:      body.Badges,
 		Roles:       body.Roles,
 		Notebooks:   body.Notebooks,
