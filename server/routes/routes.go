@@ -23,6 +23,11 @@ func SetRoutes(router *gin.Engine) {
 	router.DELETE("/notebooks/:id", handlers.DeleteNotebook)
 
 	// Notes
+	router.GET("/notes", handlers.FetchAllNotes)
+	router.GET("/notes/:id", handlers.FetchNoteById)
+	router.POST("/notes", handlers.CreateNote)
+	router.PATCH("/notes/:id", handlers.UpdateNote)
+	router.DELETE("/notes/:id", handlers.DeleteNote)
 
 	// Chats
 
