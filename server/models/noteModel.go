@@ -1,8 +1,8 @@
 package models
 
 type Note struct {
-	authors  []string
-	title    string
-	content  string
-	notebook string
+	Authors  []string `json:"authors" db:"authors"`
+	Title    string   `json:"title" db:"title"`
+	Content  string   `json:"content" db:"content"`
+	Notebook string   `json:"notebook" db:"notebook"`
 }
