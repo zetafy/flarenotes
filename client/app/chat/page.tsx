@@ -12,7 +12,8 @@ export default function ChatPage() {
             content: "Testing testing 123 lol.",
             timestamp: "Today at 12:54PM",
             authorId: 2032176,
-            messageType: "user"
+            messageType: "user",
+            messageReply: false
         },
         {
             id: 2,
@@ -20,7 +21,8 @@ export default function ChatPage() {
             content: "Lorem Ipsum",
             timestamp: "Today at 12:54PM",
             authorId: 2044172,
-            messageType: "user"
+            messageType: "user",
+            messageReply: false
         },
         {
             id:3,
@@ -28,7 +30,8 @@ export default function ChatPage() {
             content: "I agree",
             timestamp: "Today at 12:55PM",
             authorId: 2055718,
-            messageType: "user"
+            messageType: "user",
+            messageReply: 2
         },
         {
             id: 4,
@@ -36,7 +39,8 @@ export default function ChatPage() {
             content: "Bad idea...",
             timestamp: "Today at 12:56PM",
             authorId: 2032176,
-            messageType: "user"
+            messageType: "user",
+            messageReply: 3
         },
         {
             id: 5,
@@ -44,7 +48,8 @@ export default function ChatPage() {
             content: "I wonder.",
             timestamp: "Today at 12:56PM",
             authorId: 2044172,
-            messageType: "user"
+            messageType: "user",
+            messageReply: false
         },
         {
             id: 6,
@@ -52,7 +57,8 @@ export default function ChatPage() {
             content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
             timestamp: "Today at 12:56PM",
             authorId: 2418289,
-            messageType: "user"
+            messageType: "user",
+            messageReply: false
         },
         {
             id: 7,
@@ -60,7 +66,8 @@ export default function ChatPage() {
             content: "I love rust.",
             timestamp: "Today at 12:57PM",
             authorId: 2418289,
-            messageType: "user"
+            messageType: "user",
+            messageReply: false
         },
         {
             id: 8,
@@ -68,7 +75,8 @@ export default function ChatPage() {
             content: "Java sucks.",
             timestamp: "Today at 12:57PM",
             authorId: 2418289,
-            messageType: "user"
+            messageType: "user",
+            messageReply: false
         },
         {
             id: 9,
@@ -76,7 +84,8 @@ export default function ChatPage() {
             content: "Nathan has joined server",
             timestamp: "Today at 12:57PM",
             authorId: 100000,
-            messageType: "system"
+            messageType: "system",
+            messageReply: false
         }
     ]
     return (
