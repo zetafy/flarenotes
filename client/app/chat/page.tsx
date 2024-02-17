@@ -89,7 +89,7 @@ export default function ChatPage() {
         }
     ]
     return (
-        <div className="bg-slate-300 h-screen flex justify-center">
+        <div className="bg-slate-300 dark:bg-slate-700 h-screen flex justify-center">
             <div className="bg-slate-200 w-[40%] h-[95%] m-2 rounded-md">
                 {/* Other content might go here */}
             </div>
@@ -112,7 +112,7 @@ export default function ChatPage() {
                         <div className="space-y-2 flex flex-col w-full">
                             {chatSample.map((chat) => (
                                 chat.messageType === "system" ? (
-                                    <div className="flex items-center justify-center mt-2 mb-2">
+                                    <div key={chat.id} className="flex items-center justify-center mt-2 mb-2">
                                         <div className="flex-1 h-px bg-gray-400 ml-3"></div>
                                         <h1 className="px-2 text-xs text-center">{chat.content}</h1>
                                         <div className="flex-1 h-px bg-gray-400 mr-3"></div>
@@ -120,13 +120,13 @@ export default function ChatPage() {
 
                                 ) : (
                                     chat.authorId === userId ? (
-                                    <div key={chat.id} className={`bg-orange-200 ${chat.content.length >= 52 ? "max-w-[50%]" : "max-w-max"} ml-auto mb-3 mr-2 mt-2 rounded-tl-3xl rounded-tr-3xl rounded-bl-3xl p-3 shadow-lg`}>
+                                    <div key={chat.id} className={`bg-orange-200 dark:bg-orange-800 ${chat.content.length >= 52 ? "max-w-[50%]" : "max-w-max"} ml-auto mb-3 mr-2 mt-2 rounded-tl-3xl rounded-tr-3xl rounded-bl-3xl p-3 shadow-lg`}>
                                         <h1 className="text-sm font-bold truncate">{chat.username}</h1>
                                         <p className="text-sm break-words">{chat.content}</p>
                                         <h1 className="text-xs italic pt-2 pr-2">{chat.timestamp}</h1>
                                     </div>
                                     ) : (
-                                        <div key={chat.id} className={`bg-white ${chat.content.length >= 52 ? "max-w-[50%]" : "max-w-max"} ml-3 mb-3 rounded-tl-3xl rounded-tr-3xl rounded-br-3xl p-3 shadow-lg`}>
+                                        <div key={chat.id} className={`bg-white dark:bg-gray-700 ${chat.content.length >= 52 ? "max-w-[50%]" : "max-w-max"} ml-3 mb-3 rounded-tl-3xl rounded-tr-3xl rounded-br-3xl p-3 shadow-lg`}>
                                             <h1 className="text-sm font-bold truncate">{chat.username}</h1>
                                             <p className="text-sm break-words">{chat.content}</p>
                                             <h1 className="text-xs italic pt-2 pr-2">{chat.timestamp}</h1>
