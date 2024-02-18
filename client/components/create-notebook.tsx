@@ -8,6 +8,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
+  DialogClose
 } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -132,7 +133,9 @@ export default function CreateNotebook() {
             </div>
             </div>
             <DialogFooter>
-            <Button >Create notebook</Button>
+                <DialogClose asChild>
+                    <Button >Create notebook</Button>
+                </DialogClose>
             </DialogFooter>
             </form>
         </DialogContent>
