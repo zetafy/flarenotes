@@ -16,7 +16,7 @@ const ProfilePage = () => {
 
     ]);
 
-    const handleNotebookClick = (notebookId) => {
+    const handleNotebookClick = (notebookId: number) => {
         console.log(`Notebook ${notebookId} clicked`);
     };
     return (
