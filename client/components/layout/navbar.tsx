@@ -9,7 +9,9 @@ import { settings } from "@/config/settings"
 import Image from "next/image"
 import { GitHubLogoIcon } from "@radix-ui/react-icons"
 import { Button } from "../ui/button"
+import { ExitIcon, EnterIcon } from "@radix-ui/react-icons"
 import { CgProfile } from "react-icons/cg";
+import { signIn } from "next-auth/react"
 
 import {
   DropdownMenu,
@@ -19,7 +21,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-export default function Navbar() {
+export default function Navbar({ session }: any) {
   const [navbar, setNavbar] = useState(false)
 
   const handleClick = async () => {
@@ -137,25 +139,36 @@ export default function Navbar() {
         {settings.themeToggleEnabled && (
           <div className="hidden md:block">
             <div className="flex">
-              <DropdownMenu>
+              {session ?
+                <Link href="/api/auth/signout?callbackUrl=/">
+                  <Button className="mr-2">Sign Out&nbsp; <ExitIcon /></Button>
+                </Link>
 
-                <DropdownMenuTrigger asChild>
-                  <Button variant="outline" size="icon">
-                    <CgProfile /></Button>
-                </DropdownMenuTrigger>
+                : <Link href="/login">
+                  <Button className="mr-2">Sign In&nbsp; <EnterIcon /></Button>
+                </Link>
+              }
+              {session ?
+                <DropdownMenu>
 
-                <DropdownMenuContent>
-                  <DropdownMenuLabel>My Account</DropdownMenuLabel>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuItem>
-                    <Link href="/profile" legacyBehavior>
-                      Profile
-                    </Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem>Billing</DropdownMenuItem>
-                  <DropdownMenuItem>Subscription</DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button variant="outline" size="icon">
+                      <CgProfile /></Button>
+                  </DropdownMenuTrigger>
+
+                  <DropdownMenuContent>
+                    <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem>
+                      <Link href="/profile" legacyBehavior>
+                        Profile
+                      </Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem>Billing</DropdownMenuItem>
+                    <DropdownMenuItem>Subscription</DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+                : ""}
               <Button variant="outline" size="icon">
                 <GitHubLogoIcon />
               </Button>

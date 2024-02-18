@@ -5,6 +5,7 @@ import Navbar from "@/components/layout/navbar"
 import Footer from "@/components/layout/footer"
 import { ThemeProvider } from "@/components/theme-provider"
 import { settings } from "@/config/settings"
+import NavbarServer from "@/components/layout/navbar-server"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -70,13 +71,13 @@ export default function RootLayout({ children }: RootLayoutProps) {
       >
         {settings.themeToggleEnabled ? (
           <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
-            <Navbar />
+            <NavbarServer />
             {children}
             <Footer />
           </ThemeProvider>
         ) : (
           <ThemeProvider attribute="class" forcedTheme="light" enableSystem>
-            <Navbar />
+            <NavbarServer />
             {children}
             <Footer />
           </ThemeProvider>
