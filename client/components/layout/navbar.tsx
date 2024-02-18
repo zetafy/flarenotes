@@ -141,11 +141,11 @@ export default function Navbar({ session }: any) {
             <div className="flex">
               {session ?
                 <Link href="/api/auth/signout?callbackUrl=/">
-                  <Button className="mr-2">Sign Out&nbsp; <ExitIcon /></Button>
+                  <Button className="mr-2"><ExitIcon />&nbsp;Sign Out</Button>
                 </Link>
 
                 : <Link href="/login">
-                  <Button className="mr-2">Sign In&nbsp; <EnterIcon /></Button>
+                  <Button className="mr-2"><EnterIcon />&nbsp;Sign In</Button>
                 </Link>
               }
               {session ?
@@ -166,6 +166,11 @@ export default function Navbar({ session }: any) {
                     </DropdownMenuItem>
                     <DropdownMenuItem>Billing</DropdownMenuItem>
                     <DropdownMenuItem>Subscription</DropdownMenuItem>
+                    <DropdownMenuItem>
+                      <Link href="/notes" legacyBehavior>
+                        My Notebooks
+                      </Link>
+                    </DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
                 : ""}

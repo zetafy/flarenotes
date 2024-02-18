@@ -6,6 +6,8 @@ import Footer from "@/components/layout/footer"
 import { ThemeProvider } from "@/components/theme-provider"
 import { settings } from "@/config/settings"
 import NavbarServer from "@/components/layout/navbar-server"
+import { Toaster } from "@/components/ui/toaster"
+
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -73,12 +75,14 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
             <NavbarServer />
             {children}
+            <Toaster />
             <Footer />
           </ThemeProvider>
         ) : (
           <ThemeProvider attribute="class" forcedTheme="light" enableSystem>
             <NavbarServer />
             {children}
+            <Toaster />
             <Footer />
           </ThemeProvider>
         )}
