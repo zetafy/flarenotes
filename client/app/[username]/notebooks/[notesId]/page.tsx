@@ -70,5 +70,8 @@ function HomePage() {
     </div>
   );
 }
+<<<<<<< HEAD:client/app/[username]/notes/[notesId]/page.tsx
+=======
 
 export default HomePage;
+>>>>>>> a3006d6f6b4a28fbf78d7db6aff2e2aed9bb5809:client/app/[username]/notebooks/[notesId]/page.tsx
