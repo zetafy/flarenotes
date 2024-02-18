@@ -15,7 +15,7 @@ func main() {
 	router.Use(cors.New(cors.Config{
 		AllowOrigins: []string{"*"},
 		AllowMethods: []string{"GET", "POST", "PUT", "PATCH", "DELETE"},
-		AllowHeaders: []string{"Content-Type", "Access-Control-Allow-Origin", "Access-Control-Allow-Headers", "Authorization"},
+		AllowHeaders: []string{"Content-Type", "Access-Control-Allow-Origin", "Access-Control-Allow-Headers", "Access-Control-Allow-Methods", "Authorization"},
 	}))
 
 	routes.SetRoutes(router)

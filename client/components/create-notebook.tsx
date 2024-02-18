@@ -133,14 +133,14 @@ export default function CreateNotebook() {
               </Label>
               <Switch id="public" name="public" />
             </div>
-            </div>
-            <DialogFooter>
-                <DialogClose asChild>
-                    <Button type="submit" >Create notebook</Button>
-                </DialogClose>
-            </DialogFooter>
-            </form>
-        </DialogContent>
-        </Dialog>
+          </div>
+          <DialogFooter>
+            <DialogClose asChild>
+              <Button type="submit" >Create notebook</Button>
+            </DialogClose>
+          </DialogFooter>
+        </form>
+      </DialogContent>
+    </Dialog>
   )
 }
