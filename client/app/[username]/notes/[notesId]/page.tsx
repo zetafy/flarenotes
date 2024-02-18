@@ -12,7 +12,7 @@ interface Params {
 
 export default function NotesEditor({ params }: Params) {
     const { notesId } = params;
-    const [editorContent, setEditorContent] = useState("Default notes")
+    const [editorContent, setEditorContent] = useState("Default notes");
 
     const handleContentChange = (newValue: string) => {
         setEditorContent(newValue)
