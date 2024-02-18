@@ -3,7 +3,7 @@ import { MagnifyingGlassIcon, PlusIcon } from "@radix-ui/react-icons";
 import { Button } from "@/components/ui/button";
 import { Book } from 'lucide-react';
 import CreateNotebook from "@/components/create-notebook";
-import { useToast } from "@/components/ui/use-toast"
+import { useToast } from "@/components/ui/use-toast" 
 
 
 interface Params {

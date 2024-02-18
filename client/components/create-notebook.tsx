@@ -55,7 +55,7 @@ export default function CreateNotebook() {
     }
 
     try {
-      const response = await fetch(`http://localhost:8080/notebooks`, {
+      const response = await fetch(`https://flarenotes-api-rxvdlpawqq-uc.a.run.app/notebooks`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${process.env.API_KEY}`,
@@ -64,7 +64,7 @@ export default function CreateNotebook() {
         body: JSON.stringify(newNotebook),
       });
 
-      console.log(response)
+      console.log("Test")
 
       if (!response.ok) {
         throw new Error('Network response was not ok');
@@ -133,24 +133,14 @@ export default function CreateNotebook() {
               </Label>
               <Switch id="public" name="public" />
             </div>
-<<<<<<< HEAD
-          </div>
-          <DialogFooter>
-            <Button >Create notebook</Button>
-          </DialogFooter>
-        </form>
-      </DialogContent>
-    </Dialog>
-=======
             </div>
             <DialogFooter>
                 <DialogClose asChild>
-                    <Button >Create notebook</Button>
+                    <Button type="submit" >Create notebook</Button>
                 </DialogClose>
             </DialogFooter>
             </form>
         </DialogContent>
         </Dialog>
->>>>>>> b5e84ddef2c707dc56e31b8e81a3c7a84f6b4ac6
   )
 }
