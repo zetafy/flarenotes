@@ -30,7 +30,7 @@ interface Params {
     params: { username: string }
 }
 
-export default function ProfilePage({ params }: Params) {
+export default function SettingsPage({ params }: Params) {
     const { username } = params;
 
     const form = useForm<z.infer<typeof formSchema>>({
