@@ -54,6 +54,8 @@ func CreateNote(context *gin.Context) {
 		Title    string   `json:"title"`
 		Content  string   `json:"content"`
 		Notebook string   `json:"notebook"`
+		Color    string   `json:"color" db:"color"`
+		Public   bool     `json:"public" db:"public"`
 	}
 
 	if err := context.Bind(&body); err != nil {
@@ -66,6 +68,8 @@ func CreateNote(context *gin.Context) {
 		Title:    body.Title,
 		Content:  body.Content,
 		Notebook: body.Notebook,
+		Color:    body.Color,
+		Public:   body.Public,
 	}
 
 	var results []models.Notebook
@@ -91,6 +95,8 @@ func UpdateNote(context *gin.Context) {
 		Title    string   `json:"title"`
 		Content  string   `json:"content"`
 		Notebook string   `json:"notebook"`
+		Color    string   `json:"color" db:"color"`
+		Public   bool     `json:"public" db:"public"`
 	}
 
 	if err := context.Bind(&body); err != nil {
@@ -103,6 +109,8 @@ func UpdateNote(context *gin.Context) {
 		Title:    body.Title,
 		Content:  body.Content,
 		Notebook: body.Notebook,
+		Color:    body.Color,
+		Public:   body.Public,
 	}
 
 	var results []models.Notebook
