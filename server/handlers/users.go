@@ -54,8 +54,12 @@ func CreateUser(context *gin.Context) {
 		Email       string   `json:"email"`
 		Password    string   `json:"password"`
 		Description string   `json:"description"`
+		Chats       []string `json:"chats"`
+		Badges      []string `json:"badges"`
 		Roles       []string `json:"roles"`
-		Notebooks   []string `json:"notebooks"` // Assuming you handle conversion to []uuid.UUID elsewhere if necessary
+		Notebooks   []string `json:"notebooks"`
+		Followers   []string `json:"followers"`
+		Following   []string `json:"following"`
 	}
 
 	if err := context.Bind(&body); err != nil {
@@ -68,8 +72,12 @@ func CreateUser(context *gin.Context) {
 		Email:       body.Email,
 		Password:    body.Password,
 		Description: body.Description,
+		Chats:       body.Chats,
+		Badges:      body.Badges,
 		Roles:       body.Roles,
 		Notebooks:   body.Notebooks,
+		Followers:   body.Followers,
+		Following:   body.Following,
 	}
 
 	var results []models.User
@@ -95,8 +103,12 @@ func UpdateUser(context *gin.Context) {
 		Email       string   `json:"email"`
 		Password    string   `json:"password"`
 		Description string   `json:"description"`
+		Chats       []string `json:"chats"`
+		Badges      []string `json:"badges"`
 		Roles       []string `json:"roles"`
-		Notebooks   []string `json:"notebooks"` // Assuming you handle conversion to []uuid.UUID elsewhere if necessary
+		Notebooks   []string `json:"notebooks"`
+		Followers   []string `json:"followers"`
+		Following   []string `json:"following"`
 	}
 
 	if err := context.Bind(&body); err != nil {
@@ -109,8 +121,12 @@ func UpdateUser(context *gin.Context) {
 		Email:       body.Email,
 		Password:    body.Password,
 		Description: body.Description,
+		Chats:       body.Chats,
+		Badges:      body.Badges,
 		Roles:       body.Roles,
 		Notebooks:   body.Notebooks,
+		Followers:   body.Followers,
+		Following:   body.Following,
 	}
 
 	var results []models.User
