@@ -1,5 +1,3 @@
-"use client"
-
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -18,11 +16,16 @@ import {
   TabsTrigger,
 } from "@/components/ui/tabs"
 import { Separator } from "@/components/ui/separator"
-import { GitHubLogoIcon } from '@radix-ui/react-icons'
-import { ImGoogle } from "react-icons/im"
-import { signIn } from "next-auth/react"
+import { redirect } from "next/navigation"
+import { getServerSession } from "next-auth"
+import { options } from "../api/auth/[...nextauth]/options"
+import LoginButtons from "@/components/login-buttons"
 
-export default function LoginPage() {
+export default async function LoginPage() {
+  const session = await getServerSession(options)
+  if (!session) {
+    redirect("/")
+  }
   return (
     <div className="flex justify-center mt-5">
       <Tabs defaultValue="Login" className="w-[400px]">
@@ -33,9 +36,7 @@ export default function LoginPage() {
         <TabsContent value="Login">
           <Card>
             <CardHeader>
-
-              <Button onClick={() => signIn("google")}><ImGoogle className="h-4 w-4 mr-3" />Login with Google</Button>
-              <Button onClick={() => signIn("github")}><GitHubLogoIcon className="h-4 w-4 mr-3" />Login with Github</Button>
+              <LoginButtons />
             </CardHeader>
             <Separator className="mb-4" />
             <CardContent className="space-y-2">
