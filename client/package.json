@@ -25,11 +25,14 @@
     "@radix-ui/react-tabs": "^1.0.4",
     "@types/react": "18.2.15",
     "@types/react-dom": "18.2.7",
+    "@uiw/react-markdown-editor": "^6.0.0",
+    "@uiw/react-md-editor": "^4.0.3",
     "autoprefixer": "10.4.14",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "eslint": "8.45.0",
     "eslint-config-next": "14.0.1",
+    "katex": "^0.16.9",
     "lucide-react": "^0.263.1",
     "next": "14.0.1",
     "next-auth": "^4.24.5",
@@ -49,6 +52,7 @@
     "zod": "^3.22.3"
   },
   "devDependencies": {
+    "@types/katex": "^0.16.7",
     "@types/node": "20.4.3",
     "prettier": "^3.0.0",
     "prettier-plugin-tailwindcss": "^0.4.1"
