@@ -5,3 +5,4 @@
 Note-taking/sharing app built with Next.js, Gin, and Supabase.
 
 IN DEVELOPMENT
+PENDING DEPLOYMENT TESTING
